@@ -15,20 +15,21 @@ public class DeckMain {
 		}
 
 		//shuffle
+		String temp;
 		for(int i=0;i<card.length;i++) {
 			int randomValue= (int)(Math.random() * card.length);
 			for(int j = 0;j < card.length;j++) {
-				card[i]=card[j];
-				card[j]=card[randomValue];
-				card[randomValue]=card[i];
+				temp = card[j];
+				card[j] = card[randomValue];
+				card[randomValue] = temp;
 			}
 		}
 
 		int k=0;
 		for(int i=0;i<4;i++) {
-			System.out.println("Player :- "+(i+1));
+			System.out.print("Player :- "+(i+1));
 			for(int j=0;j<9;j++) {
-				System.out.print("[ "+card[k]+" ]");
+				System.out.print(" [ "+card[k]+" ]");
 				k++;
 			}
 			System.out.println();
