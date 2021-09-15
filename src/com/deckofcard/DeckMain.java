@@ -10,7 +10,7 @@ public class DeckMain {
 
 		for(int i = 0;i < suits.length;i++) {
 			for(int j = 0;j < rank.length;j++) {
-				card[rank.length*i+j] = rank[j]+ " " +suits[i];
+				card[rank.length * i + j] = rank[j]+ " of " + suits[i];
 			}
 		}
 
@@ -24,15 +24,25 @@ public class DeckMain {
 				card[randomValue] = temp;
 			}
 		}
-
+		
+		//Print in 2d array form
 		int k=0;
-		for(int i=0;i<4;i++) {
-			System.out.print("Player :- "+(i+1));
-			for(int j=0;j<9;j++) {
-				System.out.print(" [ "+card[k]+" ]");
+		String disp[][] = new String[4][9];
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 9; j++) {
+				disp[i][j] = card[k];
 				k++;
 			}
+
+		}
+		for (int i = 0; i < 4; i++) {
+			System.out.println("Player ::" + (i + 1));
+			for (int j = 0; j < 9; j++) {
+				System.out.print("[" + disp[i][j] + "]");
+
+			}
 			System.out.println();
+
 		}
 	}
 }
